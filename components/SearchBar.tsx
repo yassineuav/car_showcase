@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SearchManufacturer } from "./";
+import  SearchManufacturer  from "./SearchManufacturer";
 import Image from "next/image";
 
 const SearchButton = ({ otherClasses }: { otherClasses: String }) => (
@@ -20,6 +20,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: String }) => (
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState("");
+  
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +54,7 @@ const SearchBar = () => {
   };
 
   return (
-    <form className="searcjnar" onSubmit={handleSearch}>
+    <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
